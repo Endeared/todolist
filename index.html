@@ -193,10 +193,11 @@ body {
                 removeCancel = document.getElementById('cancelBtn')
                 removeAdd.remove();
                 removeCancel.remove();
-                let addBar = document.createElement("div");
+                let addBar = document.createElement("input");
                 addBar.className = "addBar";
                 addBar.id = "addBar";
                 addBar.innerHTML += "test"
+                addBar.setAttribute("onkeydown", "search(this)");
                 let addHere = document.getElementById('addHere');
                 addHere.appendChild(addBar);
             })
@@ -216,6 +217,14 @@ body {
             container.appendChild(add);
             container.appendChild(cancel);
         })
+
+    function search(ele) {
+        if(event.key === 'Enter') {
+            console.log(ele.value);
+            const addBar = document.getElementById('addBar');
+            addBar.remove();
+        }
+    }
 
 class Card {
 	constructor(value, suit) {

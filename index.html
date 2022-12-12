@@ -158,7 +158,7 @@ body {
                     <img id="testImg" src="https://www.nicepng.com/png/full/741-7414977_clipboard-icon-white.png">Test Project
                 </div>
             </div>
-            <div class="addProj">
+            <div class="addProj" id="addHere">
                 <div class="add" id="adder">
                     <img id="addImg" src="https://www.nicepng.com/png/full/251-2519428_0-add-icon-white-png.png">Add Project
                 </div>
@@ -188,6 +188,18 @@ body {
             }
             const container = document.getElementById('select')
             const add = document.createElement("div");
+            add.addEventListener('click', function (event) {
+                removeAdd = document.getElementById('addBtn')
+                removeCancel = document.getElementById('cancelBtn')
+                removeAdd.remove();
+                removeCancel.remove();
+                let addBar = document.createElement("div");
+                addBar.className = "addBar";
+                addBar.id = "addBar";
+                addBar.innerHTML += "test"
+                let addHere = document.getElementById('addHere');
+                addHere.appendChild(addBar);
+            })
             add.className = "addBtn"
             add.id = "addBtn"
             add.innerHTML = "ADD"

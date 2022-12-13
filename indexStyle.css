@@ -1,0 +1,172 @@
+body {
+    background-color: rgb(77, 77, 77);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.page {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 15vh 80vh 5vh;
+    font-family: 'Calibri';
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: sticky;
+}
+
+.sideBar {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: rgb(80, 80, 80);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-weight: 600;
+    position: sticky;
+}
+
+.main {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: rgb(45, 45, 45);
+    overflow: scroll;
+}
+
+.footer {
+    grid-column: 1/3;
+    grid-row: 3/4;
+    background-color: rgb(60, 60, 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+}
+
+.headerText {
+    margin-left: 1vw;
+    font-size: 4rem;
+    color: white;
+    font-weight: 600;
+}
+
+#checkmark {
+    height: 50px;
+    width: auto;
+    margin-left: 1vw;
+}
+
+#default, #testImg, #addImg {
+    height: 30px;
+    width: auto;
+}
+
+.defaultList, .test, .add {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.5vw;
+    border-radius: 10px;
+    transition: 0.2s ease-out;
+}
+
+.defaultList:hover {
+    background-color: rgb(45, 45, 45);
+    transition: 0.2s ease-out;
+}
+
+.test:hover, .add:hover {
+    background-color: rgb(45, 45, 45);
+    transition: 0.2s ease-out;
+}
+
+.projs {
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+    font-size: 2rem;
+}
+
+.defaultList {
+    margin-top: 3vh;
+    font-size: 1.2rem;
+}
+
+.currentProjs div {
+    margin-bottom: 1vh;
+}
+
+.addProj {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBtn, .cancelBtn {
+    padding: 0.5vw;
+    border-radius: 10px;
+}
+
+.addBtn {
+    background-color: rgba(0, 128, 0, 0.744);
+}
+
+.cancelBtn {
+    background-color: rgba(255, 0, 0, 0.722);
+}
+
+.addCancel {
+    margin-top: 1vh;
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.addHere {
+    justify-content: center;
+}
+
+.addBar {
+    margin-top: 2vh;
+    padding: 1vw;
+
+}
+
+input {
+    text-align: center;
+}
+
+.project {
+    background-color: rgb(80, 80, 80);
+    margin: 2vw;
+    padding: 2vw;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.project div {
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+.inProgress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+}

@@ -218,9 +218,12 @@ body {
             container.appendChild(cancel);
         })
 
+    let objValues = [];
+
     function titleProj(ele) {
         if(event.key === 'Enter') {
             console.log(ele.value);
+            objValues.push(ele.value)
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
@@ -236,6 +239,7 @@ body {
     function description(ele) {
         if(event.key === 'Enter') {
             console.log(ele.value);
+            objValues.push(ele.value)
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
@@ -251,6 +255,7 @@ body {
     function duedate(ele) {
         if(event.key === 'Enter') {
             console.log(ele.value);
+            objValues.push(ele.value)
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
@@ -266,7 +271,12 @@ body {
     function priority(ele) {
         if(event.key === 'Enter') {
             console.log(ele.value);
+            objValues.push(ele.value)
+            console.log(objValues)
             let addBar = document.getElementById('addBar');
+            let newObj = new list(objValues[0], objValues[1], objValues[2], objValues[3]);
+            objValues = [];
+            console.log(newObj)
             addBar.remove();
         }
     }

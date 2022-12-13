@@ -167,7 +167,10 @@ body {
             </div>
 
         </div>
-        <div class="main"></div>
+        <div class="main">
+            <div class="inProgress" id="inProgress">
+            </div>
+        </div>
         <div class="footer">
             <div class="credits">Page designed by Ross Hamey - @Endeared on GitHub. Inspired by @michalosman on GitHub.</div>
         </div>
@@ -267,6 +270,8 @@ body {
             addHere.appendChild(addBar);
         }
     }
+
+    let i = 0;
 
     function priority(ele) {
         if(event.key === 'Enter') {

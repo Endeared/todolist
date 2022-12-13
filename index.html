@@ -197,7 +197,7 @@ body {
                 addBar.className = "addBar";
                 addBar.id = "addBar";
                 addBar.innerHTML += "test"
-                addBar.setAttribute("onkeydown", "search(this)");
+                addBar.setAttribute("onkeydown", "titleProj(this)");
                 let addHere = document.getElementById('addHere');
                 addHere.appendChild(addBar);
             })
@@ -218,7 +218,7 @@ body {
             container.appendChild(cancel);
         })
 
-    function search(ele) {
+    function titleProj(ele) {
         if(event.key === 'Enter') {
             console.log(ele.value);
             let addBar = document.getElementById('addBar');
@@ -227,9 +227,47 @@ body {
             addBar.className = "addBar";
             addBar.id = "addBar";
             addBar.innerHTML += "test"
-            addBar.setAttribute("onkeydown", "search(this)");
+            addBar.setAttribute("onkeydown", "description(this)");
             let addHere = document.getElementById('addHere');
             addHere.appendChild(addBar);
+        }
+    }
+
+    function description(ele) {
+        if(event.key === 'Enter') {
+            console.log(ele.value);
+            let addBar = document.getElementById('addBar');
+            addBar.remove();
+            addBar = document.createElement("input");
+            addBar.className = "addBar";
+            addBar.id = "addBar";
+            addBar.innerHTML += "test"
+            addBar.setAttribute("onkeydown", "duedate(this)");
+            let addHere = document.getElementById('addHere');
+            addHere.appendChild(addBar);
+        }
+    }
+
+    function duedate(ele) {
+        if(event.key === 'Enter') {
+            console.log(ele.value);
+            let addBar = document.getElementById('addBar');
+            addBar.remove();
+            addBar = document.createElement("input");
+            addBar.className = "addBar";
+            addBar.id = "addBar";
+            addBar.innerHTML += "test"
+            addBar.setAttribute("onkeydown", "priority(this)");
+            let addHere = document.getElementById('addHere');
+            addHere.appendChild(addBar);
+        }
+    }
+
+    function priority(ele) {
+        if(event.key === 'Enter') {
+            console.log(ele.value);
+            let addBar = document.getElementById('addBar');
+            addBar.remove();
         }
     }
 

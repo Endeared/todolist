@@ -15,6 +15,7 @@ body {
     background-color: rgb(77, 77, 77);
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 .page {
@@ -34,6 +35,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
+    position: sticky;
 }
 
 .sideBar {
@@ -45,12 +47,14 @@ body {
     justify-content: start;
     align-items: center;
     font-weight: 600;
+    position: sticky;
 }
 
 .main {
     grid-column: 2/3;
     grid-row: 2/3;
     background-color: rgb(45, 45, 45);
+    overflow: scroll;
 }
 
 .footer {
@@ -60,6 +64,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: sticky;
 }
 
 .headerText {
@@ -115,7 +120,11 @@ body {
 }
 
 .addProj {
+    display: flex;
+    flex-direction: column;
     margin-top: 1vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .addBtn, .cancelBtn {
@@ -138,6 +147,44 @@ body {
     gap: 1.5vw;
 }
 
+.addHere {
+    justify-content: center;
+}
+
+.addBar {
+    margin-top: 2vh;
+    padding: 1vw;
+
+}
+
+input {
+    text-align: center;
+}
+
+.project {
+    background-color: rgb(80, 80, 80);
+    margin: 2vw;
+    padding: 2vw;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.project div {
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+.inProgress {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+}
+
+
 
 </style>
 
@@ -154,13 +201,13 @@ body {
             </div>
             <div class="projs">Projects</div>
             <div class="currentProjs">
-                <div class="test">
+                <!-- <div class="test">
                     <img id="testImg" src="https://www.nicepng.com/png/full/741-7414977_clipboard-icon-white.png">Test Project
-                </div>
+                </div> -->
             </div>
             <div class="addProj" id="addHere">
                 <div class="add" id="adder">
-                    <img id="addImg" src="https://www.nicepng.com/png/full/251-2519428_0-add-icon-white-png.png">Add Project
+                    <img id="addImg" src="https://www.nicepng.com/png/full/251-2519428_0-add-icon-white-png.png">Add Item
                 </div>
             </div>
             <div class="addCancel" id="select">
@@ -169,6 +216,12 @@ body {
         </div>
         <div class="main">
             <div class="inProgress" id="inProgress">
+                <div class="project">
+                    <div>Test Activity</div>
+                    <div>This is something that needs to be done soon. It is a high priority item.</div>
+                    <div>12/19/2022</div>
+                    <div>High Priority</div>
+                </div>
             </div>
         </div>
         <div class="footer">
@@ -197,9 +250,9 @@ body {
                 removeAdd.remove();
                 removeCancel.remove();
                 let addBar = document.createElement("input");
+                addBar.focus();
                 addBar.className = "addBar";
                 addBar.id = "addBar";
-                addBar.innerHTML += "test"
                 addBar.setAttribute("onkeydown", "titleProj(this)");
                 let addHere = document.getElementById('addHere');
                 addHere.appendChild(addBar);
@@ -230,9 +283,9 @@ body {
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
+            addBar.focus();
             addBar.className = "addBar";
             addBar.id = "addBar";
-            addBar.innerHTML += "test"
             addBar.setAttribute("onkeydown", "description(this)");
             let addHere = document.getElementById('addHere');
             addHere.appendChild(addBar);
@@ -246,9 +299,9 @@ body {
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
+            addBar.focus();
             addBar.className = "addBar";
             addBar.id = "addBar";
-            addBar.innerHTML += "test"
             addBar.setAttribute("onkeydown", "duedate(this)");
             let addHere = document.getElementById('addHere');
             addHere.appendChild(addBar);
@@ -262,9 +315,9 @@ body {
             let addBar = document.getElementById('addBar');
             addBar.remove();
             addBar = document.createElement("input");
+            addBar.focus();
             addBar.className = "addBar";
             addBar.id = "addBar";
-            addBar.innerHTML += "test"
             addBar.setAttribute("onkeydown", "priority(this)");
             let addHere = document.getElementById('addHere');
             addHere.appendChild(addBar);
@@ -283,6 +336,22 @@ body {
             objValues = [];
             console.log(newObj)
             addBar.remove();
+            let inProgress = document.getElementById('inProgress');
+            let newProj = document.createElement("div");
+            newProj.className = 'project'
+            let newTitle = document.createElement("div");
+            newTitle.innerHTML += newObj.title;
+            let newDesc = document.createElement("div");
+            newDesc.innerHTML += newObj.description;
+            let newDue = document.createElement("div");
+            newDue.innerHTML += newObj.dueDate;
+            let newPriority = document.createElement("div");
+            newPriority.innerHTML += newObj.priority;
+            inProgress.appendChild(newProj);
+            newProj.appendChild(newTitle);
+            newProj.appendChild(newDesc);
+            newProj.appendChild(newDue);
+            newProj.appendChild(newPriority);
         }
     }
 

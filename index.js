@@ -19,6 +19,7 @@ let selector = document.getElementById('adder')
                 addBar.className = "addBar";
                 addBar.id = "addBar";
                 addBar.setAttribute("onkeydown", "titleProj(this)");
+                addBar.placeholder = "Add title"
                 let addHere = document.getElementById('addHere');
                 addHere.appendChild(addBar);
             })
@@ -53,6 +54,7 @@ function titleProj(ele) {
         addBar.id = "addBar";
         addBar.setAttribute("onkeydown", "description(this)");
         let addHere = document.getElementById('addHere');
+        addBar.placeholder = "Add description"
         addHere.appendChild(addBar);
     }
 }
@@ -69,6 +71,7 @@ function description(ele) {
         addBar.id = "addBar";
         addBar.setAttribute("onkeydown", "duedate(this)");
         let addHere = document.getElementById('addHere');
+        addBar.placeholder = "Add due date"
         addHere.appendChild(addBar);
     }
 }
@@ -85,6 +88,7 @@ function duedate(ele) {
         addBar.id = "addBar";
         addBar.setAttribute("onkeydown", "priority(this)");
         let addHere = document.getElementById('addHere');
+        addBar.placeholder = "Add priority"
         addHere.appendChild(addBar);
     }
 }

@@ -62,14 +62,14 @@ body {
 }
 
 #checkmark {
-    height: 50px;
-    width: auto;
+    max-height: 50px;
+    max-width: auto;
     margin-left: 1vw;
 }
 
 #default, #testImg, #addImg {
-    height: 30px;
-    width: auto;
+    max-height: 30px;
+    max-width: auto;
 }
 
 .defaultList, .test, .add {
@@ -152,8 +152,8 @@ input {
     background-color: rgb(80, 80, 80);
     margin: 2vw;
     padding: 2vw;
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
     border-radius: 10px;
     font-weight: 600;
 }
